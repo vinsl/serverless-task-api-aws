@@ -212,7 +212,17 @@ tempCodeRunnerFile.py
 # Marimo
 marimo/_static/
 marimo/_lsp/
+
 __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# AWS SAM build artifacts
+.aws-sam/
+.sam-cache/
+
+# AWS CLI local configuration
+.aws/
+
+
