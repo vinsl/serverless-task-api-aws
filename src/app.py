@@ -222,6 +222,9 @@ def lambda_handler(event, context):
     path_parameters = event.get("pathParameters") or {}
     task_id = path_parameters.get("taskId")
 
+    if not task_id and path.startswith("/tasks/"):
+        task_id = path.removeprefix("/tasks/")
+
     logger.info("Request received: method=%s path=%s task_id=%s", method, path, task_id)
 
     if method == "POST" and path == "/tasks":
