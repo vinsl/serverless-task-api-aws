@@ -232,25 +232,25 @@ The `.terraform.lock.hcl` file is versioned to make provider selection reproduci
 
 The test suite covers successful CRUD operations, input validation, missing records, and unknown routes.
 
-![Pytest test suite: 11 tests passed](resources/pytest-passed.jpg)
+![Pytest test suite: 11 tests passed](resources/pytest-passed.png)
 
 ### Terraform convergence
 
 After deployment, Terraform reports no drift between the AWS resources and the declared infrastructure.
 
-![Terraform plan reports no changes](resources/terraform-plan.jpg)
+![Terraform plan reports no changes](resources/terraform-plan.png)
 
 ### API task creation
 
 A live `POST /tasks` request returned `201 Created` and produced a task with a generated UUID, timestamps, and initial `todo` status.
 
-![Successful POST request](resources/api-post.jpg)
+![Successful POST request](resources/api-post.png)
 
 ### Missing task handling
 
 A request for an unknown task ID returned `404 Not Found` with the expected API error body.
 
-![Task not found response](resources/task-not-found.jpg)
+![Task not found response](resources/task-not-found.png)
 
 ## Cleanup
 
