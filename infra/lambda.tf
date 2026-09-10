@@ -1,3 +1,7 @@
+locals {
+  lambda_function_name = "serverless-task-api"
+}
+
 data "archive_file" "task_api" {
   type        = "zip"
   source_dir  = "${path.module}/../src"
@@ -20,4 +24,13 @@ resource "aws_lambda_function" "task_api" {
       TASKS_TABLE_NAME = aws_dynamodb_table.tasks.name
     }
   }
+  depends_on = [
+    aws_iam_role_policy_attachment.lambda_cloudwatch_logs,
+    aws_cloudwatch_log_group.task_api
+  ]
+}
+
+resource "aws_cloudwatch_log_group" "task_api" {
+  name              = "/aws/lambda/${local.lambda_function_name}"
+  retention_in_days = 14
 }
