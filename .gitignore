@@ -230,4 +230,5 @@ crash.*.log
 # AWS CLI local configuration
 .aws/
 
-
+# Terraform Lambda package
+dist/
