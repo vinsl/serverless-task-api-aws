@@ -9,7 +9,7 @@ A serverless REST API for managing tasks, built with AWS services and Python.
 - Amazon DynamoDB
 - AWS IAM
 - Amazon CloudWatch
-- AWS SAM
+- Terraform
 - GitHub Actions
 
 ## Project goals

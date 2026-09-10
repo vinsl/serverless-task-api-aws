@@ -218,9 +218,14 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# AWS SAM build artifacts
-.aws-sam/
-.sam-cache/
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
 
 # AWS CLI local configuration
 .aws/
